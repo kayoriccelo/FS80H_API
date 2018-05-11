@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2018/05/02 09:05:47.574,=C:\Users\Kayo Riccelo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/05/02 09:06:05.411,C:\Users\Kayo Riccelo\Documents\FS80H_API\FS80H.pas=C:\Users\Kayo Riccelo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/05/02 09:06:05.411,C:\Users\Kayo Riccelo\Documents\FS80H_API\FS80H.dfm=C:\Users\Kayo Riccelo\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2018/05/02 09:06:26.221,C:\Users\Kayo Riccelo\Documents\FS80H_API\FS80H_Project.pas=C:\Users\Kayo Riccelo\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

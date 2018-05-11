@@ -1,0 +1,36 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'FS80H'
+  ClientHeight = 269
+  ClientWidth = 618
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object apl1: TApplicationEvents
+    Left = 200
+    Top = 8
+  end
+  object IdHTTPServer1: TIdHTTPServer
+    Bindings = <>
+    DefaultPort = 8080
+    ListenQueue = 100
+    KeepAlive = True
+    SessionState = True
+    OnCommandGet = IdHTTPServer1CommandGet
+    Left = 32
+    Top = 8
+  end
+  object TrayIcon1: TTrayIcon
+    BalloonHint = 'RestWebService Application'
+    BalloonFlags = bfInfo
+    Left = 120
+    Top = 8
+  end
+end

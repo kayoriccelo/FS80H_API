@@ -1,0 +1,69 @@
+unit FS80H_API;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.SvcMgr, Vcl.Dialogs;
+
+type
+  TService1 = class(TService)
+  private
+    { Private declarations }
+  public
+    function GetServiceController: TServiceController; override;
+    procedure doSaveLog(Msg: String);
+    { Public declarations }
+  end;
+
+var
+  Service1: TService1;
+
+implementation
+
+{$R *.dfm}
+
+procedure ServiceController(CtrlCode: DWord); stdcall;
+begin
+  Service1.Controller(CtrlCode);
+end;
+
+procedure TService1.doSaveLog(Msg: String);
+var
+  loLista: TStrings;
+
+begin
+
+  try
+
+    loLista := TStringList.Create();
+
+    try
+
+      if FileExists('c:\log.log') then
+        loLista.LoadFromFile('c:\log.log');
+
+      loLista.Add(TimeToStr(now) + ': ' + Msg)
+
+    except
+
+      on e: Exception do
+        loLista.Add(TimeToStr(now) + ': Erro ' + e.Message);
+
+    end;
+
+  finally
+
+    loLista.SaveToFile('c:\log.log');
+    FreeAndNil(loLista);
+
+  end;
+
+end;
+
+function TService1.GetServiceController: TServiceController;
+begin
+  Result := ServiceController;
+end;
+
+end.
