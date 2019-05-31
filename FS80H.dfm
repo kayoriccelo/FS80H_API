@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'FS80H'
-  ClientHeight = 64
-  ClientWidth = 174
+  ClientHeight = 227
+  ClientWidth = 284
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -3382,6 +3382,7 @@ object Form1: TForm1
   object IdHTTPServer1: TIdHTTPServer
     Bindings = <>
     DefaultPort = 9000
+    IOHandler = IdServerIOHandlerSSLOpenSSL1
     ListenQueue = 100
     KeepAlive = True
     SessionState = True
@@ -3392,7 +3393,29 @@ object Form1: TForm1
   object TrayIcon1: TTrayIcon
     BalloonHint = 'RestWebService Application'
     BalloonFlags = bfInfo
+    PopupMenu = PopupMenu1
+    OnDblClick = TrayIcon1DblClick
     Left = 120
     Top = 8
+  end
+  object IdServerIOHandlerSSLOpenSSL1: TIdServerIOHandlerSSLOpenSSL
+    SSLOptions.Mode = sslmUnassigned
+    SSLOptions.VerifyMode = []
+    SSLOptions.VerifyDepth = 0
+    Left = 72
+    Top = 80
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 184
+    Top = 64
+    object Sair1: TMenuItem
+      Caption = 'Sair'
+      OnClick = Sair1Click
+    end
+  end
+  object ApplicationEvents1: TApplicationEvents
+    OnMinimize = ApplicationEvents1Minimize
+    Left = 168
+    Top = 136
   end
 end

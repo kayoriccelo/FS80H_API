@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B09202CE-AF31-4430-97C0-E8CFF2CA65D9}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FS80H_Project.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FS80H_Project">
+        <MSBuild Projects="FS80H_Project.dproj"/>
+    </Target>
+    <Target Name="FS80H_Project:Clean">
+        <MSBuild Projects="FS80H_Project.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FS80H_Project:Make">
+        <MSBuild Projects="FS80H_Project.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FS80H_Project"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FS80H_Project:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FS80H_Project:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
